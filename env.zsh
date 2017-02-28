@@ -20,3 +20,4 @@ export PATH=$PATH:/Users/z013w36/.rvm/gems/ruby-2.2.1/bin
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOPATH/bin
+export PATH=$HOME/.fastlane/bin:$PATH
