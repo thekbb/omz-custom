@@ -33,3 +33,4 @@ canadian-sort() {
 
 alias afk='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 
+alias ofd='open_command $PWD'
