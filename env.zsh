@@ -5,5 +5,8 @@ export GOPATH=$HOME/gopath
 export PATH=$PATH:$GOPATH/bin
 export PATH=$HOME/.fastlane/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin"
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 eval "$(thefuck --alias)"
 
