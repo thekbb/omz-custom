@@ -1,4 +1,5 @@
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export PATH=/Users/z013w36/.rvm/gems/ruby-2.4.1/bin:$PATH
 export GRADLE_OPTS="-Xms2048m -Xmx4096m"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/gopath
@@ -9,4 +10,4 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 eval "$(thefuck --alias)"
-
+export REACT_EDITOR=idea
