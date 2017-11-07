@@ -10,5 +10,5 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=~/bin:$PATH
-eval "$(thefuck --alias)"
+eval $(thefuck --alias)
 export REACT_EDITOR=idea
