@@ -1,4 +1,4 @@
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+export JAVA_HOME=$(/usr/libexec/java_home -v 98)
 export PATH=/Users/z013w36/.rvm/gems/ruby-2.4.1/bin:$PATH
 export GRADLE_OPTS="-Xms2048m -Xmx4096m"
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
