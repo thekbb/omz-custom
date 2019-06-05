@@ -34,4 +34,3 @@ canadian-sort() {
 alias afk='/System/Library/Frameworks/ScreenSaver.framework/Resources/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 
 alias ofd='open_command $PWD'
-alias idea='open -b com.jetbrains.intellij'
