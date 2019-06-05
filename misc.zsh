@@ -4,5 +4,5 @@
 
 # Load nvm if it exists
 [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-fortune overheard-at-target|parrotsay
+fortune | parrotsay
 
