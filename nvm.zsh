@@ -9,7 +9,7 @@ load-nvmrc() {
   if [[ -f .nvmrc && -r .nvmrc ]]; then
     nvm use --delete-prefix
   elif [[ -f package.json && -r package.json ]]; then
-    nvm use --delete-prefix v6.9.4
+    nvm use --delete-prefix stable
   fi
 }
 add-zsh-hook chpwd load-nvmrc
