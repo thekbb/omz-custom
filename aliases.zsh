@@ -21,6 +21,10 @@ show-manifest() {
     command unzip -cq "$@" META-INF/MANIFEST.MF
 }
 
+terminate(){
+  lsof -P | grep $@ | awk '{print $2}' | xargs kill -15
+}
+
 canadian-sort() {
     if [[ $@ ]]; then
         echo "sorting file $@, eh"
