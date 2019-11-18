@@ -35,6 +35,15 @@ canadian-sort() {
     fi
 }
 
+function emu-paste {
+    if [[ $@ ]]; then
+        userinput="$(sed 's/ /%s/g' <<< $@)"
+        adb shell input text "${userinput}";
+    else
+        pbpaste | xargs adb shell input text
+    fi
+}
+
 alias afk='/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 
 alias ofd='open_command $PWD'
