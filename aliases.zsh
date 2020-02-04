@@ -6,6 +6,15 @@ alias such=git
 alias very=git
 alias wow='git status' 
 
+
+xcodebuild() {
+    if [[ $(command -v xcpretty) ]]; then
+        command xcodebuild "$@" | xcpretty
+    else
+        command xcodebuild "$@"
+    fi
+}
+
 show-manifest() {
     command unzip -cq "$@" META-INF/MANIFEST.MF
 }
