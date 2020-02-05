@@ -38,7 +38,7 @@ function emu-paste {
         userinput="$(sed 's/ /%s/g' <<< $@)"
         adb shell input text "${userinput}";
     else
-        pbpaste | xargs adb shell input text
+        pbpaste | sed -e 's/^/\"/;s/$/\"/' | xargs adb shell input text
     fi
 }
 
