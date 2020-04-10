@@ -1,12 +1,6 @@
 #reload the shell
 alias reload='source ~/.zshrc'
 
-# Doge git
-alias such=git
-alias very=git
-alias wow='git status' 
-
-
 xcodebuild() {
     if [[ $(command -v xcpretty) ]]; then
         command xcodebuild "$@" | xcpretty
@@ -45,3 +39,5 @@ function emu-paste {
 alias afk='/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
 
 alias ofd='open_command $PWD'
+
+alias prune-local-gh-branches='git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D'
