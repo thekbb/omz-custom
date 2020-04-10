@@ -15,3 +15,9 @@ export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
 
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(pyenv init -)"
+export PYENV_ROOT=~/.pyenv
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
+
+export AWS_PAGER=jq
+export AWS_PROFILE=sbox1
