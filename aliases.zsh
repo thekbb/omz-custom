@@ -40,4 +40,4 @@ alias afk='/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/Scr
 
 alias ofd='open_command $PWD'
 
-alias prune-local-gh-branches='git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D'
+alias prune-local-gh-branches="git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D"
