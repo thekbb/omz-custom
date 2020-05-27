@@ -23,3 +23,5 @@ export AWS_PAGER=jq
 export AWS_PROFILE=sbox1
 set -o vi
 export EDITOR=vim
+
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
