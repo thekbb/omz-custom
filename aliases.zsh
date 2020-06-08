@@ -1,6 +1,7 @@
 #reload the shell
 alias reload='source ~/.zshrc'
 
+
 xcodebuild() {
     if [[ $(command -v xcpretty) ]]; then
         command xcodebuild "$@" | xcpretty
