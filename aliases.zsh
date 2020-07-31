@@ -28,7 +28,10 @@ function emu-paste {
 }
 
 ecr-latest() {
-    aws ecr describe-images --repository-name "$@" --query 'sort_by(imageDetails,& imagePushedAt)[-1].imageTags[0]'
+    aws ecr describe-images \
+        --repository-name "$@" \
+        --query 'sort_by(imageDetails,& imagePushedAt)[-1].imageTags[0]' \
+        | sed -e 's/^"//' -e 's/"$//'
 }
 
 alias afk='/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine'
