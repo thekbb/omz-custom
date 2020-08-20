@@ -23,7 +23,6 @@ export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 
 export AWS_PAGER=jq
 export AWS_REGION=us-east-2
-export AWS_PROFILE=sbox01
 set -o vi
 export EDITOR=vim
 
