@@ -1,4 +1,4 @@
-set-git-email() {
+git-configurator() {
   if [ -d .git ]; then
     remote=`git remote -v | awk '/\(push\)$/ {print $2}'`
     if [[ $remote =~ .*"bremer".* ]]; then
@@ -8,5 +8,5 @@ set-git-email() {
     fi   
   fi
 }
-add-zsh-hook chpwd set-git-email
-set-git-email
+add-zsh-hook chpwd git-configurator
+git-configurator
