@@ -12,6 +12,7 @@ export REACT_EDITOR=idea
 export PATH=/usr/local/opt/sqlite/bin:$PATH
 export ANDROID_SDK=$HOME/Library/Android/sdk
 export PATH=$ANDROID_SDK/emulator:$ANDROID_SDK/tools:$PATH
+export GPG_TTY=$(tty)
 
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/shims:$PATH"

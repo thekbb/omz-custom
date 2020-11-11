@@ -1,9 +1,10 @@
-autoload -Uz add-zsh-hook
 set-git-email() {
   if [ -d .git ]; then
     remote=`git remote -v | awk '/\(push\)$/ {print $2}'`
-    if [[ $remote == git@code.bremer.com:* ]]; then
+    if [[ $remote =~ .*"bremer".* ]]; then
        git config user.email kbbehrens@bremer.com
+       git config user.signingkey 084D9EA8FB4C3AF8
+       git config commit.gpgsign true
     fi   
   fi
 }
