@@ -1,3 +1,4 @@
+autoload -Uz add-zsh-hook
 git-configurator() {
   if [ -d .git ]; then
     remote=`git remote -v | awk '/\(push\)$/ {print $2}'`

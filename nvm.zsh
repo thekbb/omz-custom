@@ -3,7 +3,7 @@
 
 # Load nvm if it exists
 [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-
+autoload -Uz add-zsh-hook
 load-nvmrc() {
   if [[ -f .nvmrc && -r .nvmrc ]]; then
     nvm use --delete-prefix
