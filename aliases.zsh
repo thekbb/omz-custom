@@ -38,6 +38,9 @@ alias afk='/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/Scr
 
 alias ofd='open_command $PWD'
 
-alias prune-local-gh-branches="git for-each-ref --format '%(refname:short)' refs/heads | grep -v master | xargs git branch -D"
+prune-local-gh-branches() {
+    DEFAULT_BRANCH=$(git remote show origin | grep "HEAD branch" | sed 's/.* //')
+    git for-each-ref --format '%(refname:short)' refs/heads | grep -v $DEFAULT_BRANCH | xargs git branch -D
+}
 
 alias aws-whoami="aws sts get-caller-identity"
