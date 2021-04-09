@@ -1,6 +1,9 @@
 #reload the shell
 alias reload='source ~/.zshrc'
 
+copy-plan() {
+     tee |awk '/-{72}/{flag=1;next}/-{72}/{flag=0}flag' | pbcopy --prefer-rtf
+}
 
 xcodebuild() {
     if [[ $(command -v xcpretty) ]]; then
