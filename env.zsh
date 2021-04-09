@@ -18,7 +18,6 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/shims:$PATH"
 export PATH="/Users/kbehrens/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 export PYENV_ROOT=~/.pyenv
 export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 
