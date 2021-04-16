@@ -49,12 +49,14 @@ prune-local-gh-branches() {
 alias aws-whoami="aws sts get-caller-identity"
 
 function aws-login-clipboard {
-    pbpaste | source /dev/stdin
-    #TODO: parse out account ID, role and user in a non-janky way
-    aws sts get-caller-identity --query Arn \
-      | sed -e s/arn:aws:sts::// \
-      | sed -e 's/:assumed-role\/AWSReservedSSO_/ /' \
-      | sed -e 's/\// /' \
-      | sed -e 's/\"//g'
+    CLIPBOARD=$(pbpaste)
+    if  [[ ! $CLIPBOARD =~ 'AWS_' ]]
+    then
+        echo "clipboard doesn't have aws creds" && return 1
+    fi
+    echo $CLIPBOARD | source /dev/stdin
+    unset CLIPBOARD
+    aws-whoami
+    echo "junk" | pbcopy
 }
 
