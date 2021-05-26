@@ -60,3 +60,6 @@ function aws-login-clipboard {
     echo "junk" | pbcopy
 }
 
+function aws-role-by-id {
+    aws iam list-roles | jq '.Roles[] | select(.RoleId == '\"$1\"')'
+}
