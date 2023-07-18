@@ -1,4 +1,9 @@
 .idea
+.DS_Store
+
+#GET OFF MY 
+*.swp
+
 # Gives you a place to stick your various api tokens and other secrets
 private.zsh
 

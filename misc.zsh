@@ -8,6 +8,6 @@
 
 # Load nvm if it exists
 [[ -f "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
-fortune bdsl-fortune | parrotsay
+fortune bremer-fortune | parrotsay
 
 eval $(thefuck --alias)

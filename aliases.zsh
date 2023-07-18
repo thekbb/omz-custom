@@ -5,16 +5,17 @@ copy-plan() {
      tee |awk '/-{72}/{flag=1;next}/-{72}/{flag=0}flag' | pbcopy --prefer-rtf
 }
 
-xcodebuild() {
-    if [[ $(command -v xcpretty) ]]; then
-        command xcodebuild "$@" | xcpretty
-    else
-        command xcodebuild "$@"
-    fi
+sort-clipboard() {
+    pbpaste|sort1
 }
+
 
 show-manifest() {
     command unzip -cq "$@" META-INF/MANIFEST.MF
+}
+
+was-james-here() {
+    [ $(dos2unix --quiet --safe --info=d * | grep -iE "\s[1-9]" | wc -l) -eq 0 ] || echo "FUCKING JAMES"
 }
 
 terminate(){
@@ -62,4 +63,10 @@ function aws-login-clipboard {
 
 function aws-role-by-id {
     aws iam list-roles | jq '.Roles[] | select(.RoleId == '\"$1\"')'
+}
+
+piplogin () {
+	export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain beacon-domain --domain-owner 807759772659 --query authorizationToken --output text)
+	export PIPENV_PYPI_MIRROR="https://aws:$CODEARTIFACT_AUTH_TOKEN@beacon-domain-807759772659.d.codeartifact.us-east-2.amazonaws.com/pypi/beacon-python/simple/"
+	pip3 config set global.index-url "https://aws:$CODEARTIFACT_AUTH_TOKEN@beacon-domain-807759772659.d.codeartifact.us-east-2.amazonaws.com/pypi/beacon-python/simple/"
 }
