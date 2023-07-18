@@ -1,14 +1,9 @@
 #reload the shell
 alias reload='source ~/.zshrc'
 
-copy-plan() {
-     tee |awk '/-{72}/{flag=1;next}/-{72}/{flag=0}flag' | pbcopy --prefer-rtf
-}
-
 sort-clipboard() {
     pbpaste|sort1
 }
-
 
 show-manifest() {
     command unzip -cq "$@" META-INF/MANIFEST.MF
